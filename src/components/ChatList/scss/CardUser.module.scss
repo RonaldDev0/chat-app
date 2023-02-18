@@ -1,0 +1,13 @@
+.container {
+  border-bottom: .01px solid rgba(128, 128, 128, 0.479);
+  height: 70px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+
+.container:hover {
+  background-color: #363636;
+  cursor: pointer;
+}
