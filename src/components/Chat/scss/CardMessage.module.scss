@@ -1,17 +1,24 @@
-.container {
-  max-width: 60%;
+.youContainer {
+  display: flex;
+  justify-content: end;
+}
+
+.otherContainer {
+  display: flex;
+}
+
+.otherMessage {
   border-radius: 10px 10px 10px 0;
   background-color: gray;
   padding: 10px;
   margin-top: 10px;
-  margin-left: 5%;
+  max-width: 60%;
 }
 
-.youContainer {
-  margin-left: 33%;
-  max-width: 60%;
+.youMessage {
   border-radius: 10px 10px 0 10px;
   background-color: rgb(52, 105, 72);
   padding: 10px;
   margin-top: 10px;
+  max-width: 60%;
 }

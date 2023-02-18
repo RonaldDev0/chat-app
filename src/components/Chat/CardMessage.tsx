@@ -8,17 +8,27 @@ interface message {
 }
 
 export default function CardMessage ({ item }: { item: message }) {
-  const getClasName = () => {
+  const getContainer = () => {
     if (item.userId === 'you') {
       return style.youContainer
     } else {
-      return style.container
+      return style.otherContainer
+    }
+  }
+
+  const getClasName = () => {
+    if (item.userId === 'you') {
+      return style.youMessage
+    } else {
+      return style.otherMessage
     }
   }
   return (
-    <div className={getClasName()}>
-      <p>{item.message}</p>
-      <p>{item.insertAt.toString()}</p>
+    <div className={getContainer()}>
+      <div className={getClasName()}>
+        <p>{item.message}</p>
+        <p>{item.insertAt.toString()}</p>
+      </div>
     </div>
   )
 }
