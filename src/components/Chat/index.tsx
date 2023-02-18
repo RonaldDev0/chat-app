@@ -5,16 +5,14 @@ import ChatHistory from './ChatHistory'
 
 import style from './scss/index.module.scss'
 
-export default function Chat () {
-  const chatSelect = true
-
+export default function Chat ({ chatOpen }: {chatOpen: String | null}) {
   return (
     <div className={style.container}>
       {
-      !chatSelect
+      !chatOpen
         ? <BackgroundDefault />
         : <>
-          <NavBarr />
+          <NavBarr chatOpen={chatOpen} />
           <ChatHistory />
           <FormMessage />
           </>

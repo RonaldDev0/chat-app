@@ -1,14 +1,13 @@
 import style from './scss/CardUser.module.scss'
 
-interface user {
-  id: number,
-  name: string
-}
+export default function List ({ user, setChatOpen }: { user: String, setChatOpen: Function }) {
+  const handleClick = () => {
+    setChatOpen(user)
+  }
 
-export default function List ({ user }: { user: user}) {
   return (
-    <div className={style.container}>
-      <p>{user.name}</p>
+    <div className={style.container} onClick={handleClick}>
+      <p>{user}</p>
     </div>
   )
 }
