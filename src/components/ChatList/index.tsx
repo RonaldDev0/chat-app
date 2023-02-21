@@ -12,7 +12,7 @@ export default function ChatList ({ chats, setChatOpen }: chatProps) {
     <div className={style.container}>
       <NavBarr />
       <div className={style.cardsContainer}>
-        {chats?.map((user, index) => <CardUser key={index} user={user} setChatOpen={setChatOpen} />)}
+        {chats?.map((user: any, index) => <CardUser key={index} user={user.name} setChatOpen={setChatOpen} />)}
       </div>
     </div>
   )

@@ -5,7 +5,7 @@ import ChatHistory from './ChatHistory'
 
 import style from './scss/index.module.scss'
 
-export default function Chat ({ chatOpen }: {chatOpen: String | null}) {
+export default function Chat ({ chatOpen, messages }: {chatOpen: String | null, messages: any}) {
   return (
     <div className={style.container}>
       {
@@ -13,7 +13,7 @@ export default function Chat ({ chatOpen }: {chatOpen: String | null}) {
         ? <BackgroundDefault />
         : <>
           <NavBarr chatOpen={chatOpen} />
-          <ChatHistory />
+          <ChatHistory chatOpen={chatOpen} messages={messages} />
           <FormMessage />
           </>
       }

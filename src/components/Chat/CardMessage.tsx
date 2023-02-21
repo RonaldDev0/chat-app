@@ -27,7 +27,6 @@ export default function CardMessage ({ item }: { item: message }) {
     <div className={getContainer()}>
       <div className={getClasName()}>
         <p>{item.message}</p>
-        <p>{item.insertAt.toString()}</p>
       </div>
     </div>
   )

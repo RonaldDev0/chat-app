@@ -7,7 +7,7 @@ export default function List ({ user, setChatOpen }: { user: String, setChatOpen
 
   return (
     <div className={style.container} onClick={handleClick}>
-      <p>{user}</p>
+      <p className={style.content}>{user}</p>
     </div>
   )
 }
