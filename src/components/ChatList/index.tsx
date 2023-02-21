@@ -3,7 +3,7 @@ import CardUser from './CardUser'
 import style from './scss/index.module.scss'
 
 interface chatProps {
-  chats: String[] | null,
+  chats: String[] | null
   setChatOpen: Function
 }
 

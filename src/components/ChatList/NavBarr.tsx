@@ -11,7 +11,7 @@ export default function NavBarr () {
   useEffect(() => {
     const getName = async () => {
       const { data: { session: { user: { user_metadata: user } } } }: any = await supabase.auth.getSession()
-      setUser(user.name)
+      setUser(user.user_name)
       setImage(user.avatar_url)
     }
     getName()

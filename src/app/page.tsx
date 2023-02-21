@@ -8,14 +8,16 @@ export default function Home () {
   const [chats, setChats] = useState<String[] | any>(['test 1', 'test 2'])
   const [chatOpen, setChatOpen] = useState(null)
   const [messages, setMessages] = useState([])
+  const [User, setUser] = useState(null)
 
   useEffect(() => {
     const getChats = async () => {
       const { data: { session: { user: { user_metadata: user } } } }: any = await supabase.auth.getSession()
-      newUser(user.name)
+      setUser(user.user_name)
+      newUser(user.user_name)
 
       const { data } = await getUsers()
-      const filter = data?.filter((users) => users.name !== user.name)
+      const filter = data?.filter((users) => users.name !== user.user_name)
       setChats(filter)
 
       const { data: listMessages }: any = await supabase.from('messages').select('*')
@@ -27,7 +29,7 @@ export default function Home () {
   return (
     <div className={style.container}>
       <ChatList chats={chats} setChatOpen={setChatOpen} />
-      <Chat chatOpen={chatOpen} messages={messages} />
+      <Chat chatOpen={chatOpen} messages={messages} User={User} />
     </div>
   )
 }
