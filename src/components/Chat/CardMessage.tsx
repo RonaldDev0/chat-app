@@ -1,15 +1,16 @@
 import style from './scss/CardMessage.module.scss'
 
 interface message {
-  userId: String;
-  sendUserId: String;
-  insertAt: Number;
+  id: number;
+  user_id: String;
+  send_to: String;
   message: String;
+  create_at: Number;
 }
 
-export default function CardMessage ({ item }: { item: message }) {
+export default function CardMessage ({ item, User }: { item: message, User: any }) {
   const getContainer = () => {
-    if (item.userId === 'you') {
+    if (item.user_id === User) {
       return style.youContainer
     } else {
       return style.otherContainer
@@ -17,7 +18,7 @@ export default function CardMessage ({ item }: { item: message }) {
   }
 
   const getClasName = () => {
-    if (item.userId === 'you') {
+    if (item.user_id === User) {
       return style.youMessage
     } else {
       return style.otherMessage
