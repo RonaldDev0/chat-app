@@ -7,7 +7,7 @@ import style from './page.module.scss'
 export default function Home () {
   const [chats, setChats] = useState<String[] | any>(['test 1', 'test 2'])
   const [chatOpen, setChatOpen] = useState(null)
-  const [messages, setMessages] = useState([])
+  const [messages, setMessages] = useState<any>([])
   const [User, setUser] = useState(null)
 
   useEffect(() => {
@@ -25,6 +25,16 @@ export default function Home () {
     }
     getChats()
   }, [])
+
+  supabase.channel('messages')
+    .on(
+      'postgres_changes',
+      { event: '*', schema: 'public', table: 'messages' },
+      (payload: any) => {
+        setMessages([...messages, payload.new])
+      }
+    )
+    .subscribe()
 
   return (
     <div className={style.container}>

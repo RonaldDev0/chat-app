@@ -1,4 +1,16 @@
 .container {
-  height: 85%;
+  height: 760px;
   padding: 10px;
+  font-size: 1.25rem;
+  overflow: auto;
+}
+
+.container::-webkit-scrollbar {
+  background-color: transparent;
+  width: 7px;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: rebeccapurple;
+  border-radius: 10px;
 }
