@@ -5,7 +5,7 @@ interface message {
   user_id: String;
   send_to: String;
   message: String;
-  create_at: Number;
+  created_at: Number;
 }
 
 export default function CardMessage ({ item, User }: { item: message, User: any }) {
