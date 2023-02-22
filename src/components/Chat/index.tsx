@@ -11,11 +11,12 @@ export default function Chat ({ User, chatOpen, messages }: { User: String | nul
       {
       !chatOpen
         ? <BackgroundDefault />
-        : <>
+        :
+        <>
           <NavBarr chatOpen={chatOpen} />
           <ChatHistory chatOpen={chatOpen} messages={messages} User={User} />
           <FormMessage chatOpen={chatOpen} User={User} />
-          </>
+        </>
       }
     </div>
   )

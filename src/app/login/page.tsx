@@ -1,5 +1,6 @@
 'use client'
 import { useSupabase } from '@/components'
+import style from './style.module.scss'
 
 export default function Login () {
   const { supabase } = useSupabase()
@@ -7,7 +8,7 @@ export default function Login () {
 
   return (
     <>
-      <button onClick={handleGitHubLogin}>GitHub Login</button>
+      <button onClick={handleGitHubLogin} className={style.button}>GitHub Login</button>
     </>
   )
 }
