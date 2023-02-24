@@ -12,10 +12,11 @@ export default function FormMesage ({ User, chatOpen }: { User: String | null, c
 
   const handleSubmit = async (e: any) => {
     e.preventDefault()
-    if (message !== '') {
+    const msg = message.trim()
+    if (msg !== '') {
       sendMessage(User, chatOpen, message)
     } else {
-      alert('write a message')
+      alert('Write a message')
     }
     setMessage('')
   }
