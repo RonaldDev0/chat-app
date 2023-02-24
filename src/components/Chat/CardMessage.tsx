@@ -9,6 +9,8 @@ interface message {
 }
 
 export default function CardMessage ({ item, User }: { item: message, User: any }) {
+  const date = new Date(item.created_at.toString())
+
   const getContainer = () => {
     if (item.user_id === User) {
       return style.youContainer
@@ -28,6 +30,7 @@ export default function CardMessage ({ item, User }: { item: message, User: any 
     <div className={getContainer()}>
       <div className={getClasName()}>
         <p>{item.message}</p>
+        <p className={style.hour}>{date.toString().slice(16, 21)}</p>
       </div>
     </div>
   )
