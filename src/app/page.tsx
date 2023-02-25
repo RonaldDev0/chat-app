@@ -14,13 +14,16 @@ export default function Home () {
     const getChats = async () => {
       const { data: { session: { user: { user_metadata: user } } } }: any = await supabase.auth.getSession()
       setUser(user.user_name)
-      newUser(user.user_name)
 
       const { data } = await getUsers()
       const filter = data?.filter((users) => users.name !== user.user_name)
       setChats(filter)
 
-      // const userExist = data?.filter((users) => users.name === newUser(user.user_name))
+      const userExist: any = data?.filter((users) => users.name === user.user_name)
+
+      if (!userExist[0]) {
+        newUser(user.user_name)
+      }
 
       const { data: listMessages }: any = await supabase.from('messages').select('*')
       setMessages(listMessages)
