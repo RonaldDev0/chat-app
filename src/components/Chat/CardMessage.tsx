@@ -9,7 +9,7 @@ interface message {
 }
 
 export default function CardMessage ({ item, User }: { item: message, User: any }) {
-  const date = new Date(item.created_at.toString())
+  const date = new Date(item.created_at.toString()).toString()
 
   const getContainer = () => {
     if (item.user_id === User) {
@@ -30,7 +30,7 @@ export default function CardMessage ({ item, User }: { item: message, User: any 
     <div className={getContainer()}>
       <div className={getClasName()}>
         <p>{item.message}</p>
-        <p className={style.hour}>{date.toString().slice(16, 21)}</p>
+        <p className={style.hour}>{date.slice(16, 21)}</p>
       </div>
     </div>
   )

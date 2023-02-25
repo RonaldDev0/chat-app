@@ -10,7 +10,8 @@
 .otherMessage {
   border-radius: 10px 10px 10px 0;
   background-color: gray;
-  padding: 10px;
+  padding-left: 6px;
+  padding-right: 6px;
   margin-top: 10px;
   max-width: 60%;
   display: flex;
@@ -22,7 +23,8 @@
 .youMessage {
   border-radius: 10px 10px 0 10px;
   background-color: rgb(52, 105, 72);
-  padding: 10px;
+  padding-left: 6px;
+  padding-right: 6px;
   margin-top: 10px;
   max-width: 60%;
   display: flex;
